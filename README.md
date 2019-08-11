@@ -1,4 +1,4 @@
-# Twitter-Sentiment-Analyze
+# Twitter-Sentiment-Analyzer
 Determines the sentiment of a topic based on a collection of recent tweets 
 
 
