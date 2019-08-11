@@ -2,7 +2,7 @@
 Determines the sentiment of a topic based on a collection of recent tweets 
 
 
-Again the obligatory meme!
+Obligatory meme about the topic
 
 ![alt text](https://github.com/aaronalmeida/Twitter-Sentiment-Analyzer/blob/master/meme.jpg)
 
