@@ -20,7 +20,7 @@ Obligatory meme about the topic
 - Keyword Search
 
 ## Collector 
-The collector will use the corpus file containing the tweet_ids and pull each tweet individually. This process takes about 10 hours as Twitters API has a limit of 180 requests every hour for a standard API key. The data is saved in another .csv file. 
+The collector will use the corpus file containing the tweet_ids and pull each tweet individually. This process takes about 10 hours as Twitters API has a limit of 180 requests every hour for a standard API key. The data is saved in another .csv file (included in repo)
 
 ## Processor 
 The purpose of the preprocessor is clean up the tokens (words) to ensure the classifier reads the word for what it's supposed to be 
@@ -33,7 +33,7 @@ The purpose of the preprocessor is clean up the tokens (words) to ensure the cla
 
 - The data will be processed using the Naive Bayes Classifier 
 - The algorithm uses the corpus data with positive and negative labels to train the classifier 
-- The vocabulary is built using the corpus data, labeling the words as positive, negative or neutral 
+- The vocabulary is built using the corpus data, labeling each word as positive, negative or neutral 
 - The tweets are then compared to all the words in the vocabulary, marking their existence as true or false 
 - Determines if the tweet is positive or negative based on how many words in the tweet are positive or negative 
 
@@ -42,3 +42,4 @@ The purpose of the preprocessor is clean up the tokens (words) to ensure the cla
 - Find the trending topics & automatically determine its sentiment 
 - Find sentiment of a keyword at a certain point in time 
 - Implement sentiment during a stock analysis
+- Implement a fully functional natural language processor that understand sentances rather than a compilation of words 
