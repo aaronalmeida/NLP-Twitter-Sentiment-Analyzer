@@ -12,7 +12,6 @@
 import twitter
 import csv
 import time
-import pandas as pd
 import re
 import nltk
 from nltk.tokenize import word_tokenize
@@ -42,8 +41,7 @@ def buildTestSet(search_keyword):
           print("fetch exception" + str(e))
           return None
 
-search_term = input("Enter a search keyword: ")
-testDataSet = buildTestSet(search_term)
+
 
 #print(testDataSet[0:4])
 
@@ -94,7 +92,7 @@ def openFile():
                theList.append({"tweet_id": row[0], "text":row[1],"label":row[2], "topic":row[3]})
      return theList
 
-trainingData = openFile()
+
 
 
 # a class to process(clean) the tweets of uneeded stuff
@@ -124,9 +122,7 @@ class PreProcessTweets:
 #trainingData = buildTrainingSet('corpus.csv', 'test2.csv')
 
 
-tweetProcessor = PreProcessTweets()
-preprocessedTrainingSet = tweetProcessor.processTweets(trainingData)
-preprocessedTestSet = tweetProcessor.processTweets(testDataSet)
+
 
 #a function that will build our word feature vector for each tweet 
 def buildVocabulary(preprocessedTrainingData):
@@ -151,6 +147,22 @@ def extract_features(tweet):
     return features 
 
 
+
+
+
+
+
+
+
+######################################
+search_term = input("Enter a search keyword: ")
+testDataSet = buildTestSet(search_term)
+
+trainingData = openFile()
+tweetProcessor = PreProcessTweets()
+preprocessedTrainingSet = tweetProcessor.processTweets(trainingData)
+preprocessedTestSet = tweetProcessor.processTweets(testDataSet)
+
 # Now we can extract the features and train the classifier 
 word_features = buildVocabulary(preprocessedTrainingSet)
 trainingFeatures=nltk.classify.apply_features(extract_features,preprocessedTrainingSet)
@@ -168,11 +180,6 @@ if NBResultLabels.count('positive') > NBResultLabels.count('negative'):
 else: 
     print("Overall Negative Sentiment")
     print("Negative Sentiment Percentage = " + str(100*NBResultLabels.count('negative')/len(NBResultLabels)) + "%")
-
-
-
-
-
 
 
 
