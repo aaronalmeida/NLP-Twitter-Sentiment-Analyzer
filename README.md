@@ -1,5 +1,5 @@
-# Twitter-Sentiment-Analyzer
-Determines the sentiment of a topic based on a collection of recent tweets 
+# Natural Language Based Twitter Sentiment Analyzer
+Determines the sentiment of a topic based on a collection of recent tweets using Natural Language Processing.
 
 
 Obligatory meme about the topic
